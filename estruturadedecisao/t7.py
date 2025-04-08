@@ -8,6 +8,12 @@ elif n1 >= n2 and n1 >= n3:
     print(n1, "is the biggest Number!")
 elif n2 >= n1 and n2 >= n3:
     print(n2, "is the biggest Number!")
-else:
+elif n3 >= n1 and n3 >= n2:
     print(n3, "is the biggest Number!")
 
+if n1 <= n2 and n1 <= n3:
+    print(n1, "is the minor Number!")
+elif n2 <= n1 and n2 <= n3:
+    print(n2, "is the minor Number!")
+else:
+    print(n3, "is the minor Number!")
