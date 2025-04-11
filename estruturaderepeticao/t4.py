@@ -10,5 +10,4 @@ for i in range(1000):
     A *= (1 + txaA)
     B *= (1 + txaB)
     ages += 1
-
 print(f"The County 'A' needs {ages} years to reach at the country 'B' Population")
