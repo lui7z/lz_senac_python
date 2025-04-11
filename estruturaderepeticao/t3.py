@@ -1,19 +1,19 @@
-name = str(input("Type your Name: \n"))
-age = int(input("Type your Age: \n"))
-earning = float(input("Type your Earnings: \n"))
-sex = str(input("Type your Sex: \nF - Female, M - Male")).upper()
-state = str(input("Type your Civil State: \n"))
+name = ""
+age = 0
+earning = 0
+sex1 = ""
+state1 = ""
 
+state2 = ['S', 'M', 'W', 'D']
+sex2 = ['F', 'M', 'NB']
 
+while len(name) < 3:
+    name = input("Type your name: ").strip()
+    if not name.replace(" ", "").isalpha():
+        print("Invalid! Please Type a valid name using only letters!")
+        name = ""
+    else:
+        print ("Confirmed")
 
-while age < 0 and age > 150:
-    print("Invalid Age")
-    age = int(input("Type your Age: \n"))
-
-while earning < 0:
-    print("Invalid Earning")
-    earning = float(input("Type your Earnings: \n"))
-
-
-
-print("Everything Ok!")
+while age <= 0 or age > 150:
+    age = int(input("Type your name: "))
