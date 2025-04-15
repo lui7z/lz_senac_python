@@ -1,8 +1,3 @@
-import os
-
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
 name = ""
 age = 0
 earning = 0
@@ -14,11 +9,10 @@ sex2 = ['F', 'M', 'NB']
 
 while len(name) < 2 or not name.replace(" ", "").isalpha():
     name = input("Type your name: ").strip()
-    if not name.replace(" ","").isalpha() or len(name) < 3:
+    if not name.replace(" ","").isalpha() or len(name) < 2:
         print("\033[31mInvalid! Please type a valid name using only letters!\033[0m")
         name = ""
     else:
-        clear()
         print("\033[32mConfirmed\033[0m")
 
 while age <= 0 or age > 100:
@@ -27,7 +21,6 @@ while age <= 0 or age > 100:
         if age <= 0 or age > 100:
             print("\033[31mInvalid! Please type a valid Age!\033[0m")
         else:
-            clear()
             print("\033[32mConfirmed\033[0m")
     except ValueError:
         print("\033[31mInvalid! Age must be a number!\033[0m")
@@ -39,7 +32,6 @@ while earning <= 0:
         if earning <= 0:
             print("\033[31mInvalid! Your earnings must be Bigger than 0!\033[0m")
         else:
-            clear()
             print("\033[32mConfirmed\033[0m")
     except ValueError:
         print("\033[31mInvalid! Your earnings must be a number!\033[0m")
@@ -51,7 +43,6 @@ while sex1.upper() not in sex2:
         print("\033[31mInvalid! Please type one of the Options!\033[0m")
         sex1 = ""
     else:
-        clear()
         print("\033[32mConfirmed\033[0m")
 
 while state1.upper() not in state2:
@@ -60,7 +51,6 @@ while state1.upper() not in state2:
         print("\033[31mInvalid! Please type one of the Options!\033[0m")
         state1 = ""
     else:
-        clear()
         print("\033[32mConfirmed\033[0m")
 
 print(f"\nEverything that you reported was: \nName: \033[32m{name}\033[0m\nAge: \033[32m{age}\033[0m\nEarnings: \033[32m{earning}\033[0m\nSex: \033[32m{sex1}\033[0m\nCivic State: \033[32m{state1}\033[0m")
