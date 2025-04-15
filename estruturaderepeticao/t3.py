@@ -46,8 +46,8 @@ while earning <= 0:
         earning = 0
 
 while sex1.upper() not in sex2:
-    sex1 = input("\nType your Sex \nF - Female, M - Male, NB - Non Binary \n").strip()
-    if not sex1.isalpha() or sex1.upper() not in sex2:
+    sex1 = input("\nType your Sex \nF - Female, M - Male, NB - Non Binary \n").strip().upper()
+    if not sex1.isalpha() or sex1 not in sex2:
         print("\033[31mInvalid! Please type one of the Options!\033[0m")
         sex1 = ""
     else:
@@ -55,8 +55,8 @@ while sex1.upper() not in sex2:
         print("\033[32mConfirmed\033[0m")
 
 while state1.upper() not in state2:
-    state1 = input("\nType your Civic State \nS - Single, M - Married, W - Widowed, D - Divorced \n").strip()
-    if not state1.isalpha() or state1.upper() not in state2:
+    state1 = input("\nType your Civic State \nS - Single, M - Married, W - Widowed, D - Divorced \n").strip().upper()
+    if not state1.isalpha() or state1 not in state2:
         print("\033[31mInvalid! Please type one of the Options!\033[0m")
         state1 = ""
     else:
