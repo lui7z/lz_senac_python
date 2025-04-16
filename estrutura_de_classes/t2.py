@@ -1,7 +1,6 @@
 class Quadrado:
     def __init__(self):
         self.lado = float(input("Type the side of your Square: "))
-
         self.area = None
 
     def calcular(self):

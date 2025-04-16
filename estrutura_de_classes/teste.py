@@ -25,7 +25,7 @@ def cardapio():
 def pagamento():
     if opcao in menu:
         clear()
-        print("O Seu pedido ficou no valor de 500 pesos mexicanos.")
+        print("\033[32mO Seu pedido ficou no valor de 500 pesos mexicanos.\033[0m")
 
 while True:
     cardapio()
