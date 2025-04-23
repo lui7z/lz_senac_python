@@ -1,18 +1,61 @@
 class Pessoa:
-    def __init__(self, nome, idade, peso, altura):
-        self.nome = nome
-        self.idade = idade
-        self.peso = peso
-        self.altura = altura
+    def __init__(self):
+        self.nome = str(input("Digite o Nome da Pessoa: "))
+        self.idade = int(input("Digite a Idade da Pessoa: "))
+        self.peso = float(input("Digite o Peso da Pessoa: "))
+        self.altura = float(input("Digite a Altura da Pessoa: "))
         self.opcao = None
 
-    def opcao(self):
-        self.opcao = str(input(f"Digite uma das Opções desejadas:\nEnvelhecer - 1\nEngordar - 2\nEmagrecer - 3\nCrescer - 4"))
+        self.idadeog = self.idade
+        self.pesoog = self.peso
+        self.alturaog = self.altura
+
+    def envelhecer(self):
+        self.anos = int(input("Digite Quantos Anos a Pessoa Envelheceu: "))
+        self.idade += self.anos
+        if self.idadeog < 21:
+            if self.idade <21:
+                crescimento = self.anos * 0.05
+            else:
+                crescimento = (21 - self.idadeog) * 0.05
+            self.crescer(crescimento)
+
+        print(f"Após Envelhecer sua nova Idade é: {self.idade} e sua altura é: {self.altura}")
+
+    def engordar(self):
+        self.gordura = float(input("Digite o Ganho de Peso: "))
+        self.peso += self.gordura
+        print(f"Após Engordar seu novo Peso é: {self.peso}")
+
+    def emagrecer(self):
+        self.perda = float(input("Digite a Perda de Peso: "))
+        if self.peso < self.perda:
+            self.emagrecer()
+        else:
+            self.peso -= self.perda
+        print(f"Após Emagrecer seu novo Peso é: {self.peso}")
+
+    def crescer(self, ganho):
+        self.altura += ganho
+        print(f"Após Crescer sua nova Altura é: {self.altura}")
 
     def __str__(self):
         if self.opcao is None:
-            self.opcao()
-        return (f"A Pessoa tem o Nome = {self.nome}\nSua Idade é = {self.idade}\nSeu Peso é = {self.peso}\nE sua Altura é = {self.altura}")
+            self.op()
+        print("---------------------------------------------------------------------------------------------------------------------------------------------------------")
+        return (f"As Informações Originais da Pessoa são:\nNome = {self.nome}\nSua Idade é = {self.idadeog}\nSeu Peso é = {self.pesoog}\nE sua Altura é = {self.alturaog}")
 
-fulano = Pessoa("Luiz", 19, 70, 1.70)
-print(fulano)
+    def op(self):
+        print("---------------------------------------------------------------------------------------------------------------------------------------------------------")
+        self.opcao = str(input(f"Digite uma das Opções desejadas:\nEnvelhecer - 1\nEngordar - 2\nEmagrecer - 3\nCrescer - 4\n"))
+        if self.opcao == "1":
+            self.envelhecer()
+        elif self.opcao == "2":
+            self.engordar()
+        elif self.opcao == "3":
+            self.emagrecer()
+        elif self.opcao == "4":
+            self.crescer(float(input("Digite o Ganho de Altura: ")))
+
+Fulano1 = Pessoa()
+print(Fulano1)
