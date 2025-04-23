@@ -20,12 +20,12 @@ class Pessoa:
                 crescimento = (21 - self.idadeog) * 0.05
             self.crescer(crescimento)
 
-        print(f"Após Envelhecer sua nova Idade é: {self.idade} e sua altura é: {self.altura}")
+        print(f"                                       Após Envelhecer sua nova Idade é: {self.idade} e sua altura é: {self.altura}")
 
     def engordar(self):
         self.gordura = float(input("Digite o Ganho de Peso: "))
         self.peso += self.gordura
-        print(f"Após Engordar seu novo Peso é: {self.peso}")
+        print(f"                                       Após Engordar seu novo Peso é: {self.peso}")
 
     def emagrecer(self):
         self.perda = float(input("Digite a Perda de Peso: "))
@@ -33,11 +33,11 @@ class Pessoa:
             self.emagrecer()
         else:
             self.peso -= self.perda
-        print(f"Após Emagrecer seu novo Peso é: {self.peso}")
+        print(f"                                       Após Emagrecer seu novo Peso é: {self.peso}")
 
     def crescer(self, ganho):
         self.altura += ganho
-        print(f"Após Crescer sua nova Altura é: {self.altura}")
+        print(f"                                       Após Crescer sua nova Altura é: {self.altura}")
 
     def __str__(self):
         if self.opcao is None:
@@ -47,7 +47,7 @@ class Pessoa:
 
     def op(self):
         print("---------------------------------------------------------------------------------------------------------------------------------------------------------")
-        self.opcao = str(input(f"Digite uma das Opções desejadas:\nEnvelhecer - 1\nEngordar - 2\nEmagrecer - 3\nCrescer - 4\n"))
+        self.opcao = str(input(f"                                       Digite uma das Opções desejadas:\nEnvelhecer - 1                   Engordar - 2                    Emagrecer - 3                   Crescer - 4\n"))
         if self.opcao == "1":
             self.envelhecer()
         elif self.opcao == "2":
