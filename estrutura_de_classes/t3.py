@@ -1,9 +1,9 @@
 class Pessoa:
     def __init__(self):
         self.nome = str(input("Digite o Nome da Pessoa: "))
-        self.idade = int(input("Digite a Idade da Pessoa: "))
-        self.peso = float(input("Digite o Peso da Pessoa: "))
-        self.altura = float(input("Digite a Altura da Pessoa: "))
+        self.idade = int(input(f"Digite a Idade de {self.nome}: "))
+        self.peso = float(input(f"Digite o Peso de {self.nome}: "))
+        self.altura = float(input(f"Digite a Altura de {self.nome}: "))
         self.opcao = None
 
         self.idadeog = self.idade
@@ -11,7 +11,7 @@ class Pessoa:
         self.alturaog = self.altura
 
     def envelhecer(self):
-        self.anos = int(input("Digite Quantos Anos a Pessoa Envelheceu: "))
+        self.anos = int(input(f"Digite Quantos Anos {self.nome} Envelheceu: "))
         self.idade += self.anos
         if self.idadeog < 21:
             if self.idade <21:
